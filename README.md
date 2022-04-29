@@ -14,6 +14,7 @@ Example usage of CodeceptJS test framework
 - parallelised example = `yarn test-run-multiple`
     - shards by 'Feature' (i.e. by test file)
 - CircleCI test pipelines (`yarn_lint`, `yarn_test`, `yarn_test_parallel`)
+- make browser testing visible from the commandline by prefixing test commands with `SHOW_BROWSER=true` 
 
 
 ## TODO:
