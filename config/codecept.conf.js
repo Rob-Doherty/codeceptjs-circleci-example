@@ -6,7 +6,7 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: 'http://www.whiteboxitsolutions.com',
-      show: false,  // headless by default to run on CircleCI unix box
+      show: process.env.SHOW_BROWSER || false,  // headless by default to run on CircleCI unix box
       waitForTimeout: 10000,
       waitForAction: 500,
       chrome: {
