@@ -12,17 +12,18 @@ executors:
 commands:
   install_dependencies:
     steps:
+      - upgrade_node
       - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+  upgrade_node:
+    steps:
       - run: node --version
       - run: apt-get update && apt-get install -y curl
       - run: curl --version
-#      - run: nvm --version
       - node/install:
-#          install-yarn: true
           node-version: '16.15'
       - run: node --version
-      - node/install-packages:
-          pkg-manager: yarn
 
 jobs:
   setup:
@@ -37,6 +38,7 @@ jobs:
   yarn_lint:
     executor: linux
     steps:
+      - upgrade_node
       - attach_workspace:
           at: ./
       - run: yarn lint
@@ -44,6 +46,7 @@ jobs:
   yarn_test:
     executor: linux
     steps:
+      - upgrade_node
       - attach_workspace:
           at: ./
       - run: yarn test
@@ -51,6 +54,7 @@ jobs:
   yarn_test_parallel:
     executor: linux
     steps:
+      - upgrade_node
       - attach_workspace:
           at: ./
       - run: yarn test-run-multiple
