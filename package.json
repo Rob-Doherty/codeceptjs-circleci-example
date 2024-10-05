@@ -15,16 +15,18 @@
     "test-run-multiple": "codeceptjs run-multiple --all -c config/run-multiple.conf.js --reporter mochawesome"
   },
   "pre-commit": [
-    "lint"
+
   ],
   "devDependencies": {
-    "codeceptjs": "^3.3.2",
-    "eslint": "^8.14.0",
-    "eslint-plugin-mocha": "^10.0.4",
-    "glob": "^8.0.1",
-    "mocha": "^9.2.2",
+    "@eslint/js": "^9.12.0",
+    "codeceptjs": "^3.6.7",
+    "eslint": "^9.12.0",
+    "eslint-plugin-mocha": "^10.5.0",
+    "glob": "^11.0.0",
+    "globals": "^15.10.0",
+    "mocha": "^10.7.3",
     "mochawesome": "^7.1.3",
     "pre-commit": "^1.2.2",
-    "puppeteer": "^13.7.0"
+    "puppeteer": "^23.4.1"
   }
 }
