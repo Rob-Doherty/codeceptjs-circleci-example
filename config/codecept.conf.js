@@ -9,7 +9,7 @@ exports.config = {
       show: process.env.SHOW_BROWSER || false,  // headless by default to run on CircleCI unix box
       waitForTimeout: 10000,
       waitForAction: 500,
-      waitForNavigation: [ "domcontentloaded", "networkidle0" ],
+      waitForNavigation: [ 'domcontentloaded', 'networkidle0' ],
       windowSize: '1024x640',
       chrome: {
         args: [
