@@ -10,9 +10,9 @@ Scenario('search for Rob-Doherty', ({I}) => {
   I.amOnPage('https://github.com/');
   I.click({css: 'button.header-search-button'});
   I.fillField({css: 'input.QueryBuilder-Input'}, 'Rob-Doherty');
-  I.click({xpath: '//li[@data-value="Rob-Doherty"]'});
+  I.click({css: 'li[data-value="Rob-Doherty"]'});
   I.waitForNavigation()
-  I.click({xpath: '//a[@data-testid="nav-item-users"]'});
+  I.click({css: 'a[data-testid="nav-item-users"]'});
   within('//div[@data-testid="results-list"]', () => {
     I.see('Rob-Doherty');
     I.click('Rob-Doherty');
