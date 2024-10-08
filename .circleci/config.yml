@@ -7,7 +7,7 @@ orbs:
 executors:
   linux:
     docker:
-      - image: 'codeception/codeceptjs'
+      - image: 'codeceptjs/codeceptjs'
 
 commands:
   install_dependencies:
@@ -22,7 +22,7 @@ commands:
       - run: apt-get update && apt-get install -y curl
       - run: curl --version
       - node/install:
-          node-version: '16.15'
+          node-version: '22.9'
       - run: node --version
 
 jobs:
