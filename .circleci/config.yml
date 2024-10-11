@@ -24,6 +24,9 @@ commands:
       - node/install:
           node-version: '22.9'
       - run: node --version
+  install_chrome:
+    steps:
+      - run: npx puppeteer browsers install chrome
 
 jobs:
   setup:
@@ -47,6 +50,7 @@ jobs:
     executor: linux
     steps:
       - upgrade_node
+      - install_chrome
       - attach_workspace:
           at: ./
       - run: yarn test
@@ -55,6 +59,7 @@ jobs:
     executor: linux
     steps:
       - upgrade_node
+      - install_chrome
       - attach_workspace:
           at: ./
       - run: yarn test-run-multiple
