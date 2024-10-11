@@ -3,6 +3,7 @@ version: 2.1
 
 orbs:
   node: circleci/node@6.1.0
+  browser-tools: circleci/browser-tools@1.4.8
 
 executors:
   linux:
@@ -26,7 +27,10 @@ commands:
       - run: node --version
   install_chrome:
     steps:
-      - run: npx puppeteer browsers install chrome
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - run: google-chrome --version
+      - run: chromedriver --version
 
 jobs:
   setup:
