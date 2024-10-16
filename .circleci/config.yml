@@ -17,7 +17,6 @@ commands:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
-      - run: npx puppeteer browsers install chrome
   upgrade_node:
     steps:
       - run: node --version
@@ -51,6 +50,7 @@ jobs:
       - upgrade_node
       - attach_workspace:
           at: ./
+      - run: npx puppeteer browsers install chrome
       - run: yarn test
       - store_artifacts:
           path: ./output
@@ -61,6 +61,7 @@ jobs:
       - upgrade_node
       - attach_workspace:
           at: ./
+      - run: npx puppeteer browsers install chrome
       - run: yarn test-run-multiple
       - store_artifacts:
           path: ./output
