@@ -25,12 +25,12 @@ commands:
       - node/install:
           node-version: '22.9'
       - run: node --version
-  install_chrome:
-    steps:
-#      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
-#      - run: google-chrome --version
-      - run: chromedriver --version
+#  install_chrome:
+#    steps:
+##      - browser-tools/install-chrome
+#      - browser-tools/install-chromedriver
+##      - run: google-chrome --version
+#      - run: chromedriver --version
 
 jobs:
   setup:
@@ -54,7 +54,7 @@ jobs:
     executor: linux
     steps:
       - upgrade_node
-      - install_chrome
+#      - install_chrome
       - attach_workspace:
           at: ./
       - run: yarn test
@@ -63,7 +63,7 @@ jobs:
     executor: linux
     steps:
       - upgrade_node
-      - install_chrome
+#      - install_chrome
       - attach_workspace:
           at: ./
       - run: yarn test-run-multiple
