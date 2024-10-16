@@ -17,6 +17,7 @@ commands:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
+      - run: npx puppeteer browsers install chrome
   upgrade_node:
     steps:
       - run: node --version
@@ -25,7 +26,6 @@ commands:
       - node/install:
           node-version: '22.9'
       - run: node --version
-      - run: npx puppeteer browsers install chrome
 
 jobs:
   setup:
