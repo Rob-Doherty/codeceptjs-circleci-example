@@ -11,7 +11,6 @@ Scenario('search for Rob-Doherty', ({I}) => {
   I.click({css: 'button.header-search-button'});
   I.fillField({css: 'input.QueryBuilder-Input'}, 'Rob-Doherty');
   I.click({css: 'li[data-value="Rob-Doherty"]'});
-  I.saveScreenshot('debug1.png');
   I.waitForNavigation();
   I.click({css: 'a[data-testid="nav-item-users"]'});
   within('//div[@data-testid="results-list"]', () => {
