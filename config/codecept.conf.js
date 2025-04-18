@@ -1,4 +1,4 @@
-const outputDir = './output';
+const outputDir = `${__dirname}/../output`;
 
 exports.config = {
   tests: '../test/*_test.js',
@@ -17,6 +17,9 @@ exports.config = {
           '--disable-setuid-sandbox'
         ]
       }
+    },
+    'Mochawesome': {
+      'uniqueScreenshotNames': 'true'
     }
   },
   include: {
@@ -30,7 +33,6 @@ exports.config = {
       reportTitle: 'CodeceptJS Example Test Report',
       inlineAssets: true
     }
-
   },
   name: 'codeceptjs-example'
 };

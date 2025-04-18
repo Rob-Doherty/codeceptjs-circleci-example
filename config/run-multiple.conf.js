@@ -2,7 +2,7 @@ const glob = require('glob');
 const fsPath = require('path');
 const fs = require('fs');
 
-const outputDir = './output';
+const outputDir = `${__dirname}/../output`;
 const testsToRun = '../test/*_test.js';
 
 exports.config = {
@@ -23,6 +23,9 @@ exports.config = {
           '--disable-setuid-sandbox'
         ]
       }
+    },
+    'Mochawesome': {
+      'uniqueScreenshotNames': 'true'
     }
   },
   include: {
@@ -36,7 +39,6 @@ exports.config = {
       reportTitle: 'CodeceptJS Parallelised Example Test Report',
       inlineAssets: true
     }
-
   },
   name: 'codeceptjs-example'
 };
