@@ -11,8 +11,9 @@ Scenario('open homepage', ({I}) => {
 
 Scenario('search for London weather', ({I}) => {
   I.amOnPage(HOMEPAGE);
-  I.waitForText('BBC');
-  I.click({css: 'li a[href="https://www.bbc.co.uk/weather"]'});
+  const WEATHER_NAV_LINK = 'li a[href="https://www.bbc.co.uk/weather"]';
+  I.waitForClickable(WEATHER_NAV_LINK);
+  I.click({css: WEATHER_NAV_LINK});
   I.fillField({css: '#ls-c-search__input-label'}, 'london');
   I.waitForText(LONDON_OPTION);
   I.click(LONDON_OPTION, '#location-list');
