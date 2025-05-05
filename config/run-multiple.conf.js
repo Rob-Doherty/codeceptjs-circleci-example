@@ -2,7 +2,7 @@ const glob = require('glob');
 const fsPath = require('path');
 const fs = require('fs');
 
-const outputDir = './output';
+const outputDir = `${__dirname}/../output`;
 const testsToRun = '../test/*_test.js';
 
 exports.config = {
@@ -23,11 +23,17 @@ exports.config = {
           '--disable-setuid-sandbox'
         ]
       }
+    },
+    'Mochawesome': {
+      'uniqueScreenshotNames': 'true'
     }
   },
   include: {
     I: '../steps_file.js',
-    homePage: '../test/pages/HomePage.js'
+    whiteboxHomePage: '../test/pages/WhiteBoxHomePage.js',
+    govUKHomePage: '../test/pages/GovUKHomePage.js',
+    govUKSearchResultsPage: '../test/pages/GovUKSearchResultsPage.js',
+    govUKMOJPage: '../test/pages/GovUKMOJPage.js'
   },
   mocha: {
     reporterOptions: {
@@ -36,7 +42,6 @@ exports.config = {
       reportTitle: 'CodeceptJS Parallelised Example Test Report',
       inlineAssets: true
     }
-
   },
   name: 'codeceptjs-example'
 };
