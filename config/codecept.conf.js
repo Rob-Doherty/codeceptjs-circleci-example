@@ -24,7 +24,10 @@ exports.config = {
   },
   include: {
     I: '../steps_file.js',
-    homePage: '../test/pages/HomePage.js'
+    whiteboxHomePage: '../test/pages/WhiteBoxHomePage.js',
+    govUKHomePage: '../test/pages/GovUKHomePage.js',
+    govUKSearchResultsPage: '../test/pages/GovUKSearchResultsPage.js',
+    govUKMOJPage: '../test/pages/GovUKMOJPage.js'
   },
   mocha: {
     reporterOptions: {

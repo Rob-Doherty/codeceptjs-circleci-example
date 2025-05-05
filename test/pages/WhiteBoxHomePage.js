@@ -22,6 +22,7 @@ module.exports = {
 
   // methods
   go() {
+    // relies on default url
     I.amOnPage('/');
   },
 

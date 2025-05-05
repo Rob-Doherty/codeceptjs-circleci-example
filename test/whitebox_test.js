@@ -1,13 +1,13 @@
 
 Feature('Whitebox', { retries: 1 });
 
-Scenario('open homepage', ({I}) => {
-  I.amOnPage('/');
+Scenario('open homepage', ({whiteboxHomePage, I}) => {
+  whiteboxHomePage.go();
   I.see('WhiteBox\n' + 'IT Solutions');
 });
 
-Scenario('follow github link in menu', ({homePage}) => {
-  homePage.go();
-  homePage.openMenu();
-  homePage.clickGithubLink();
+Scenario('follow github link in menu', ({whiteboxHomePage}) => {
+  whiteboxHomePage.go();
+  whiteboxHomePage.openMenu();
+  whiteboxHomePage.clickGithubLink();
 });
