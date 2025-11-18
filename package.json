@@ -22,7 +22,7 @@
     "codeceptjs": "^3.7.3",
     "eslint": "^8.57.1",
     "eslint-plugin-mocha": "^10.5.0",
-    "glob": "^11.0.2",
+    "glob": "^11.1.0",
     "globals": "^15.15.0",
     "mocha": "^11.2.2",
     "mochawesome": "^7.1.3",
